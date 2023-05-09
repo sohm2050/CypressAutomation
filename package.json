@@ -1,0 +1,17 @@
+{
+  "name": "cypressframeworkexample",
+  "version": "1.0.0",
+  "description": "Cypress framework",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Soham Sharma",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.11.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-report-generator": "^6.2.0"
+  }
+}

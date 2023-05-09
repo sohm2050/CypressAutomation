@@ -1,0 +1,11 @@
+{
+  "name": "Alex",
+  "email": "hello@cy.io",
+  "password":"password",
+  "gender":"Male",
+  "employmentStatusValue":"option1",
+  "employmentStatus":"Employed",
+  "dob": "1990-01-01",
+  "productName":["Blackberry","Nokia Edge"],
+  "countryName":"India"
+}
