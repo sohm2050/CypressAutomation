@@ -14,7 +14,7 @@ describe('Test Suite', function(){
         checkout = new CheckoutPage
     });
 
-    it('E2E Scenario', function(){
+    it('Test Home Page', function(){
         
         cy.visit(Cypress.env('url')+"/angularpractice/")
         home.getName().type(this.data.name)
@@ -39,39 +39,6 @@ describe('Test Suite', function(){
         home.getSubmitButton().click()
         home.getTwoWayBinding().should('have.value',this.data.name)
         home.getSuccessMessage().should('be.visible')
-
-        home.getShopLink().click()
-        cy.url().should('include','shop')
-
-        this.data.productName.forEach(mobileName =>{
-            cy.selectProduct(mobileName)
-
-        })
-
-        shop.getcheckoutButton().click()
-        var sum=0
-        checkout.getTotal().each(($el,index,$list)=>{
-            var amount = Number(($el.text().split(" "))[1].trim())
-            sum=sum+amount
-            
-        }).then(function(){
-            checkout.getGrandTotal().then(function(grandTotal){
-                var finalTotal = Number((grandTotal.text().split(" "))[1].trim())
-                expect(finalTotal).to.equal(sum)
-            })
-            
-        })
-            Cypress.config('defaultCommandTimeout',8000)
-            checkout.getCheckoutFinalButton().click()
-            checkout.getCountryInput().type(this.data.countryName)
-            checkout.getCountrySuggesstion().click()
-            checkout.getTermsAndConditionCheckbox().check({force:true}).should('be.checked')
-            checkout.getPurchaseButton().click()
-            checkout.getOrderPlacedSuccessMessage().then(function(validationMsg){
-                var flag = validationMsg.text().includes('Success')
-                expect(flag).to.equal(true)
-
-            })
 
 
     })
