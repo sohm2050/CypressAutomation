@@ -4,8 +4,9 @@
   "description": "Cypress framework",
   "main": "index.js",
   "scripts": {
+    "report-generate" : "cypress run --headed",
     "cypress:open": "cypress open",
-    "html-report": "cypress run --browser chrome --headed",
+    "html-report": "cypress run --browser chrome --headed --reporter mochawesome",
     "test": "node_modules\\.bin\\cypress run",
     "recordDashBoardTest": "npm run test -- --record --key b42482a3-b8d7-4e56-9218-f55254510ec8 --reporter mochawesome"
   },

@@ -16,7 +16,8 @@ describe('Test Suite', function(){
 
     it('E2E Scenario', function(){
         
-        cy.visit(Cypress.env('url')+"/angularpractice/")
+        cy.visit(Cypress.config('baseUrl')+"/angularpractice/")
+        cy.screenshot()
         home.getName().type(this.data.name)
         home.getEmail().type(this.data.email)
         home.getPassword().type(this.data.password)
